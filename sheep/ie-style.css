@@ -1,0 +1,2411 @@
+/*
+Theme Name: BlankSlate
+Theme URI: http://wordpress.org/themes/blankslate
+Author: TidyThemes
+Author URI: http://tidythemes.com/
+Description: <strong>UPDATE</strong> - 4.0+ is here, completely overhauled, yet again. As always, <a href="http://tidythemes.com/concept/#upgrading">use caution when upgrading</a> (tidythemes.com/concept/#upgrading) and <a href="http://tidythemes.com/concept/">learn the TidyThemes concept</a> (tidythemes.com/concept). &nbsp; &rarr; <em><strong>CAUTION</strong>: If you're child theming or have clients that are child theming on top of BlankSlate (not the recommended use), please do not blindly upgrade to newer versions.</em> &nbsp; &rarr; <strong>DESCRIPTION</strong>: BlankSlate is the definitive WordPress HTML5 boilerplate starter theme. We've carefully constructed the most clean and minimalist theme available anywhere for designers/developers to use as a base/foundation to build websites for clients or to build completely custom themes from scratch to release faster. Clean, semi-minified, unformatted and valid code, SEO-friendly, no programmer comments, standardized and as white label as possible and most importantly, CSS reset for cross-browser-compatability and no intrusive visual CSS styles added whatsoever. A perfect skeleton theme that blows any others like it (the subsequent underscores.me for example) completely out of the water, as they're simply too overcomplicated for what people really want in this kind of theme. Now comes with jQuery enqueued and ready to go. &nbsp; &rarr; <strong>SUPPORT</strong>: Please use the <a href="http://tidythemes.com/forum/">official support forum</a> (tidythemes.com/forum). Comments and suggestions for improving BlankSlate, please see "<a href="http://tidythemes.com/tidythemes-sucks/">TidyThemes Sucks!</a>" (tidythemes.com/tidythemes-sucks). Just getting started? <a href="http://tidythemes.com/want-to-learn-css/">Want to learn CSS?</a> (tidythemes.com/want-to-learn-css) &nbsp; &rarr; <strong>WHAT'S NEW?</strong>: We stripped down as much custom, extraneous, superfluous junk code as we could and greatly improved the HTML5 structure. <a href="http://make.wordpress.org/themes/author/chipbennett/">Chip Bennett</a> (make.wordpress.org/themes/author/chipbennett), a highly experienced programmer and official WordPress administrator, worked closely with us to audit the theme code for quality. <a href="http://themes.trac.wordpress.org/changeset?old_path=/blankslate/3.3&new_path=/blankslate/4.0">See</a> (themes.trac.wordpress.org/changeset?old_path=/blankslate/3.3&new_path=/blankslate/4.0) just how much we've revamped things. Last, but not least, BlankSlate has now been <a href="https://github.com/tidythemes/blankslate">opened up on GitHub</a> (github.com/tidythemes/blankslate) if anyone would like to make suggested code additions/improvements. Thank you for using BlankSlate.
+Version: 4.0.2
+License: GNU General Public License
+License URI: https://www.gnu.org/licenses/gpl.html
+Tags: black, blue, white, light, one-column, fluid-layout, responsive-layout, custom-menu, featured-images, microformats, sticky-post, threaded-comments, translation-ready
+Text Domain: blankslate
+
+BlankSlate WordPress Theme ¬¨¬© 2011-2014 TidyThemes
+BlankSlate is distributed under the terms of the GNU GPL
+*/
+
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{font-size:100%;font:inherit;padding:0;border:0;margin:0;vertical-align:baseline}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}table{border-collapse:collapse;border-spacing:0}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}.clear{clear:both}
+.sticky{}.bypostauthor{}.wp-caption{}.wp-caption-text{}.gallery-caption{}.alignright{}.alignleft{}.aligncenter{}
+
+/* Post restyling 
+   The CSS reset disables WordPress' own post
+   formatting, so I had to rebuild it by hand.
+   Feel free to tweak as necessary.
+*/
+
+.entry-content {display:block; width:95%; margin:1em; padding:0.9em; line-height:1.4em;}
+.entry-content li,.entry-content ol,.entry-content ul,.entry-content dl {
+	display:block;
+}
+.entry-content li {display:list-item; color:#FFF; text-align:left;}
+
+.entry-content a {text-decoration:underline;}
+.entry-content ol {list-style:lower-alpha !important;}
+.entry-content ul {list-style:circle !important;}
+
+.entry-content h1 {font-size:24px; margin-bottom:1.5em; margin-top:1.5em; color:#f3eba3;
+		font-family: 'Alegreya', serif; text-align:left;}
+.entry-content h2 {font-size:18px; margin-bottom:1em; margin-top:1rem; color:#f3eba3;
+		font-family: 'Alegreya', serif; text-align:left;} 
+.entry-content h3 {font-size:16px; margin-bottom:0.5em; margin-top:0.5em; color:#f3eba3;
+		font-family: 'Alegreya', serif; text-align:left;}
+.entry-content h4 {font-size:14px; margin-bottom:0.5em; margin-top:0.5em; color:#f3eba3;
+		font-family: 'Alegreya', serif; text-align:left;}
+.entry-content h5 {font-size:12px; margin-bottom:0.5em; margin-top:0.5em; color:#f3eba3;
+		font-family: 'Alegreya', serif; text-align:left;}
+.entry-content h6 {font-size:10px; margin-bottom:0.5em; margin-top:0.5em; color:#f3eba3;
+		font-family: 'Alegreya', serif; text-align:left;}
+
+.entry-content p {display:block;
+	margin-bottom:1em;
+	text-align:justify;}
+
+.entry-content strong {font-weight:bold;}
+.entry-content em {font-weight:italic;}
+	
+.arrang-iframe {
+	width:530px;
+	height:160px;
+	border:1px solid;
+	border-color:rgba(0,0,0,0.0);
+	border-radius:1em;
+	
+	background: rgb(247,247,247); /* Old browsers */
+	/* IE9 SVG, needs conditional override of 'filter' to 'none' */
+	background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPHJhZGlhbEdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgY3g9IjUwJSIgY3k9IjUwJSIgcj0iNzUlIj4KICAgIDxzdG9wIG9mZnNldD0iMCUiIHN0b3AtY29sb3I9IiNmN2Y3ZjciIHN0b3Atb3BhY2l0eT0iMSIvPgogICAgPHN0b3Agb2Zmc2V0PSI2MCUiIHN0b3AtY29sb3I9IiNlZGVkZWQiIHN0b3Atb3BhY2l0eT0iMSIvPgogICAgPHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjY2VjZWNlIiBzdG9wLW9wYWNpdHk9IjEiLz4KICA8L3JhZGlhbEdyYWRpZW50PgogIDxyZWN0IHg9Ii01MCIgeT0iLTUwIiB3aWR0aD0iMTAxIiBoZWlnaHQ9IjEwMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+	background: -moz-radial-gradient(center, ellipse cover, rgba(247,247,247,1) 0%, rgba(237,237,237,1) 60%, rgba(206,206,206,1) 100%); /* FF3.6+ */
+	background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,rgba(247,247,247,1)), color-stop(60%,rgba(237,237,237,1)), color-stop(100%,rgba(206,206,206,1))); /* Chrome,Safari4+ */
+	background: -webkit-radial-gradient(center, ellipse cover, rgba(247,247,247,1) 0%,rgba(237,237,237,1) 60%,rgba(206,206,206,1) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-radial-gradient(center, ellipse cover, rgba(247,247,247,1) 0%,rgba(237,237,237,1) 60%,rgba(206,206,206,1) 100%); /* Opera 12+ */
+	background: -ms-radial-gradient(center, ellipse cover, rgba(247,247,247,1) 0%,rgba(237,237,237,1) 60%,rgba(206,206,206,1) 100%); /* IE10+ */
+	background: radial-gradient(ellipse at center, rgba(247,247,247,1) 0%,rgba(237,237,237,1) 60%,rgba(206,206,206,1) 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f7f7f7', endColorstr='#cecece',GradientType=1 ); /* IE6-8 fallback on horizontal gradient */
+}
+
+/* End of post restyling*/
+
+/* Fix to remove the outlines caused by focus + disabled bars for non-IE.*/
+
+*:focus {
+	outline:0;
+}
+
+/* 
+   Haven't really used this one.
+   It just adds values to an empty buffer
+   div if needed.
+*/
+
+#empty-buffer {
+	height:100px;
+	width:100%;
+}
+
+.nonebox {
+	width:100%;
+	height:auto;
+	position:absolute;
+	filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#9d003300', endColorstr='#9d003300'); /* IE */
+	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#9d003300', endColorstr='#9d003300')"; /* IE8 */
+	color:#FFF;
+	font-size:3em;
+	font-family:'Nunito', sans-serif;
+	display:block;
+	text-align:center;
+	padding:0.5em;
+	}
+	
+.entry-content, .entry-title {padding:0.9em;line-height:1.1em;}
+
+/* These are consistent across all styles.*/
+
+.linkbox-img {display:inline-block;}
+
+.link-title {display:block !important;}
+
+.linkbox, .iterbox {vertical-align:top;}
+
+#tilmeld-form {
+	width:540px !important;
+	height:650px !important;
+	background:rgb(247,247,247);
+	z-index:9999;
+	
+	background: rgb(247,247,247); /* Old browsers */
+	/* IE9 SVG, needs conditional override of 'filter' to 'none' */
+	background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPHJhZGlhbEdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgY3g9IjUwJSIgY3k9IjUwJSIgcj0iNzUlIj4KICAgIDxzdG9wIG9mZnNldD0iMCUiIHN0b3AtY29sb3I9IiNmN2Y3ZjciIHN0b3Atb3BhY2l0eT0iMSIvPgogICAgPHN0b3Agb2Zmc2V0PSI2MCUiIHN0b3AtY29sb3I9IiNlZGVkZWQiIHN0b3Atb3BhY2l0eT0iMSIvPgogICAgPHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjY2VjZWNlIiBzdG9wLW9wYWNpdHk9IjEiLz4KICA8L3JhZGlhbEdyYWRpZW50PgogIDxyZWN0IHg9Ii01MCIgeT0iLTUwIiB3aWR0aD0iMTAxIiBoZWlnaHQ9IjEwMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+	background: -moz-radial-gradient(center, ellipse cover, rgba(247,247,247,1) 0%, rgba(237,237,237,1) 60%, rgba(206,206,206,1) 100%); /* FF3.6+ */
+	background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,rgba(247,247,247,1)), color-stop(60%,rgba(237,237,237,1)), color-stop(100%,rgba(206,206,206,1))); /* Chrome,Safari4+ */
+	background: -webkit-radial-gradient(center, ellipse cover, rgba(247,247,247,1) 0%,rgba(237,237,237,1) 60%,rgba(206,206,206,1) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-radial-gradient(center, ellipse cover, rgba(247,247,247,1) 0%,rgba(237,237,237,1) 60%,rgba(206,206,206,1) 100%); /* Opera 12+ */
+	background: -ms-radial-gradient(center, ellipse cover, rgba(247,247,247,1) 0%,rgba(237,237,237,1) 60%,rgba(206,206,206,1) 100%); /* IE10+ */
+	background: radial-gradient(ellipse at center, rgba(247,247,247,1) 0%,rgba(237,237,237,1) 60%,rgba(206,206,206,1) 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f7f7f7', endColorstr='#cecece',GradientType=1 ); /* IE6-8 fallback on horizontal gradient */
+}
+
+#login-form {
+	display:none;
+	z-index:9999;
+	padding:0.9em;
+	width:400px !important;
+	height:350px !important;
+	
+	border:1px solid;
+	border-color:rgba(0,0,0,0.0);
+	border-radius:1em;
+	
+	background:url("http://fynskefaareavlere.dk/wp-content/uploads/2014/03/background.png") no-repeat;
+}
+
+.logind_text_main {
+	text-align:center;
+	width:100%;
+	margin-top:2.5em;
+	color:rgb(100,100,100);
+	font-size:28px;
+}
+
+.lostpass {
+	color:rgb(100,100,100);
+	text-decoration:underline;
+	text-align:center;
+	font-size:12px;
+	display:inline-block;
+	position:absolute;
+	right:4.1em;
+	margin-top:1em;
+}
+
+.ui-widget-overlay {
+	position:fixed;
+	top:0;
+	left:0;
+	filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#9d000000', endColorstr='#9d000000'); /* IE */
+	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#9d000000', endColorstr='#9d000000')"; /* IE8 */
+	width:100%;
+	height:100%;
+}
+
+.ui-dialog-titlebar-close{display:block;}
+
+.close-button-login {
+	display:none;
+}
+
+.close-button-tilmeld {
+	display:none;
+}
+
+#login-form .button-primary {
+	background:url("");
+}
+
+#login-form .login-remember {
+	color:rgb(100,100,100) !important;
+}
+
+/* 
+   Not to be confused with #footer. This is at the bottom
+   of an individual post.
+*/
+
+.footer { text-align:center; padding-bottom:6em; }
+
+/*DESKTOP STYLING*/
+@media (min-width:1280px){
+
+	a {
+		color:#f3eba3;
+		text-decoration:none;
+	}
+	
+	h1 {
+		color:#f3eba3;
+		font-family: 'Alegreya', serif;
+	}
+	
+	p,article,h2 {
+		color:#FFF;
+		font-family: 'Nunito:400', sans-serif;
+	}
+	
+	a {
+		font-family: 'Nunito:300', sans-serif;
+	}
+	
+	article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+		display: block;
+	}
+	
+	li {
+		display:inline;
+	}
+	
+	li a {
+		color:#FFF;
+	}
+	
+	html,body{
+		height:100%\9;
+		overflow:hidden;
+	}
+	
+	html { 
+		background: url("http://fynskefaareavlere.dk/wp-content/uploads/2014/03/main_bg1.jpg") no-repeat center center fixed; 
+  		-webkit-background-size: cover;
+  		-moz-background-size: cover;
+  		-o-background-size: cover;
+  		background-size: cover;
+  		
+  		filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='.http://fynskefaareavlere.dk/wp-content/uploads/2014/03/main_bg1.jpg', sizingMethod='scale');
+  		-ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://fynskefaareavlere.dk/wp-content/uploads/2014/03/main_bg1.jpg', sizingMethod='scale')";
+  	}
+	
+	hr {
+		width:80%;
+	}
+	
+	#wrapper {
+		
+		margin-top:20%;
+		width:100%;
+		height:100%;
+		margin:0 auto;
+	}
+	
+	#container {
+		padding-top:60px;
+		padding-bottom:100px;
+		height:100%;
+	}
+	
+	/*Header and footer*/
+	
+	#header {
+		width:100%;
+		filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#9d324425', endColorstr='#9d324425'); /* IE */
+		-ms-filter: "progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#9d324425', endColorstr='#9d324425')"; /* IE8 */
+		height:8em;
+		
+		clear:both;
+	}
+	
+	#header_wrap {
+		max-width:960px;
+		width:100%;
+		height:100%;
+		margin:0 auto;
+	}
+	
+	#branding {
+		width:90%;
+		left:2em;
+		padding-top:1em;
+		font-size:28px;
+		position:relative;
+	}
+	
+	#header nav {
+		width:100%;
+		font-size:12px;
+		height:2em;
+		padding:0.9em;
+	}
+	
+	#menu {
+		list-style-type:none;
+		width:100%;
+		font-size:12px;
+		height:2em;
+		margin:0 auto;
+		float:left;
+		
+		text-align:center;
+		margin-top:24px;
+	}
+	
+	#menu a{padding-bottom:24px;margin-bottom:-24px;}
+	
+	#menu a:hover{
+		color:#f3eba3;
+		margin-bottom:-24px;
+		padding-bottom:24px;
+		background-image:url("http://fynskefaareavlere.dk/wp-content/uploads/2014/03/marker.png") 3px;
+		background-repeat:no-repeat;
+		background-position:center;
+	}
+	
+	.current-menu-item a{
+		color:#f3eba3;
+		margin-bottom:-24px;
+		padding-bottom:24px;
+		background-image:url("http://fynskefaareavlere.dk/wp-content/uploads/2014/03/marker.png") 3px;
+		background-repeat:no-repeat;
+		background-position:center;
+		font-weight:bold;
+		}
+	
+	#sec_menu {
+		width:40% !important;
+		font-size:12px;
+		display:inline-block;
+		right:2em;
+		float:right;
+		margin-top:-2.9em;
+		padding-bottom:2em;
+		position:relative;
+	}
+	
+	.sec_menu_item {display:inline-block;margin-bottom:16px;margin-left:8px;}
+
+
+	#folgos-ie{
+		margin-left:10px;
+	}
+	
+	#tilmeld-ie {
+		margin-right:10px;
+	}
+	
+	#footer {
+		position:fixed;
+		bottom:10px;
+		margin-left:1em;
+		color:#FFF;
+		text-shadow:0px 2px 1px rgba(0,0,0);
+		font-family:'Nunito:300' sans-serif;
+	}
+	
+	#mobile_menu, #mobile_button, #mobile_header {display:none;}
+	
+	#content-arrangementer, #content-annoncer,
+	#content-about, #content-contact, #content-map{
+		width:100%;
+		height:80%;
+		bottom:0;
+		filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#9d324425', endColorstr='#9d324425'); /* IE */
+		-ms-filter: "progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#9d324425', endColorstr='#9d324425')"; /* IE8 */
+
+		position:relative;
+		overflow:auto;
+		display:inline-block;
+		overflow-x:hidden;
+			
+		padding-bottom:4em;
+	}
+	
+	#arrang-headline, #annonc-headline, #headline-about,
+	#headline-contact, #headline-medlemmer, #headline-gallery,
+	#headline-iter, #headline-map{
+		text-shadow:0px 2px 1px rgb(0,0,0);
+		text-align:center;
+		width:100%;
+		font-size:32px;
+		color:#FFF;
+		padding-bottom:0.8em;
+		margin-top:-1em;
+			
+		font-family: 'Nunito:400', sans-serif;
+	}
+	
+	/*End of general styling*/
+	/*--------------------------------------------------------------------*/
+	/*Index styling*/
+	
+	/*Content (right <section>)*/
+	
+		#content {
+			width:22em;
+			height:80%;
+			bottom:0;
+			right:0;
+			filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#9d324425', endColorstr='#9d324425'); /* IE */
+			-ms-filter: "progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#9d324425', endColorstr='#9d324425')"; /* IE8 */
+			
+			position:relative;
+			overflow:auto;
+			zoom:1;
+			*display:inline;
+			
+			padding-bottom:4em;
+		}
+		
+		#content-post {
+			width:100%;
+			height:80%;
+			margin:0 auto;
+			bottom:0;
+			filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#9d324425', endColorstr='#9d324425'); /* IE */
+			-ms-filter: "progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#9d324425', endColorstr='#9d324425')"; /* IE8 */
+			
+			position:relative;
+			overflow:auto;
+			display:inline-block;
+			
+			padding-bottom:4em;
+		}
+		
+		.attachment-post-thumbnail {
+			height:75px;
+			width:75px;
+			
+			-o-border-radius:50%;
+			border:1px solid rgb(150,150,150);
+			border-radius:50%;
+			
+			margin-bottom:10px;
+			margin-left:auto;
+			margin-right:auto;
+			
+			display:block;
+		}
+		
+		#content article {
+			padding-left:0.9em;
+			padding-right:0.9em;
+			padding-top:0.9em;
+		}
+		
+		#content a {
+			font-family: 'Alegreya', serif;
+		}
+		
+		.entry-title-summary {
+			text-align:center;
+			display:block;
+			font-size:16px !important;
+		}
+		
+		.entry-title-summary a {
+			text-decoration:none;
+		}
+		
+		.entry-content-summary {
+			text-align:justify;
+			padding:1em;
+			font-size:14px !important;
+			line-height:1.2em;
+			width:90%;
+			word-wrap:break-word;
+
+		}
+		
+		.entry-thumb img {
+			height:75px;
+			width:75px;
+			
+			-o-border-radius:50%;
+			border:1px solid rgb(150,150,150);
+			border-radius:50%;
+			
+			margin-bottom:10px;
+			margin-left:auto;
+			margin-right:auto;
+			
+			display:block;
+		}
+		
+		.entry-readmore {
+			padding-top:0.5em;
+			padding-bottom:0.8em;
+			padding-left:0.3em;
+
+			text-align:center;
+			display:block;
+			
+			margin-top:10px;
+			margin-bottom:10px;
+			
+			margin-left:auto;
+			margin-right:auto;
+		}
+		
+		.entry-title a {
+			font-size:14px;
+			font-family:'Alegreya', serif;
+		}
+		
+		.news-divider {
+			width:95%;
+			margin-left:0.5em;
+		}
+		
+		/*Arrangementer*/
+		
+		#arrang-entry{
+			width:40%;
+			height:25px;
+			font-size:16px;
+			font-family:'Nunito:400' sans-serif;
+			
+			display:block;
+			position:relative;
+			left:1em;
+		}
+		
+		#arrang-aside {
+			width:40%;
+			height:auto;
+			font-size:16px;
+			color:#FFF;
+			font-family:'Nunito:400' sans-serif;
+			
+			display:block;
+			position:relative;
+			left:1em;
+			float:left;
+		}
+		
+		#begynderkursus,#kurs-priser,#emner,#kursussted {
+			font-size:24px;
+			color:#f3eba3;
+			margin-bottom:1.5em;
+		}
+		
+		#kursussted {
+			margin-top:1.2em;
+		}
+		
+		#arrang-aside ul li {
+			display:block;
+			background-image:url("http://fynskefaareavlere.dk/wp-content/uploads/2014/03/check-icon.png") !important;
+			background-repeat:no-repeat;
+			background-position:0px 2px;
+			padding-left:1em;
+			padding-bottom:5px;
+		}
+		
+		#event-feed {
+			top:-27em;
+			float:right;
+			right:1em;
+			display:block;
+			position:relative;
+			overflow:auto;
+			width:45%;
+		}
+		
+		.entry-content-events {
+			text-align:justify;
+			font-size:14px;
+			
+		}
+
+		.vert-divider {
+			display:none;
+		}
+		
+		/*Annoncer*/
+		
+		#content-annoncer ul li {
+			padding:0.9em;
+			margin-top:1em;
+			zoom:1;
+			*display:inline;
+			vertical-align:top;
+		}
+		
+		#annonc_main {
+			margin-top:0.5em;
+			padding:0.9em;
+			width:43%;
+			text-align:justify;
+			font-size:14px;
+			line-height:1.1em;
+			font-weight:bold;
+			margin-left:5.6%;
+			margin-top:-1em;
+		}
+		
+		.link_annonc {
+			margin-top:0.5em;
+			margin-bottom:0.5em;
+			text-align:center;
+			font-size:18px;
+			
+			zoom: 1;
+			*display: inline;
+		}
+		
+		.annonc-buttons {
+			width:100%;
+			margin:0 auto;
+			position:relative;
+			zoom:1;
+			*display:inline;
+			
+			padding-bottom:1em;
+			text-align:center;
+		}
+		
+		.annonc-link-text {
+			width:12em;
+			text-align:center;
+			font-size:14px;
+		}
+		
+		.annonc-link-img {
+			width:20%;
+			margin:0 auto;
+			position:relative;
+			zoom:1;
+			*display:inline;
+		}
+		
+		.annoncer-links {
+			border-top:1px solid #FFF;
+			float:right;
+			margin-top:-10.2em;
+			display:inline-block;
+			width:45%;
+			overflow:auto;
+			margin-right:1%;
+			padding-top:0.5em;
+			padding-bottom:4em;
+		}
+
+		.annoncer-linkbox {
+			width:18em;
+			height:auto;
+			display:block;
+			margin:0 auto;
+			
+			padding-top:5px;
+			padding-bottom:5px;
+			margin-bottom:1em;
+			
+			text-align:center;
+			font-size:12px;
+		}
+
+		.entry-link-summary a {
+			margin-top:1em;
+
+			font-size: 16px;
+			width:100%;
+			text-align:center;
+			color:#FFF;
+		}
+
+		.entry-link-summary:hover {
+			cursor:pointer;
+		}
+		
+		/*.annoncer-links {
+			display:none;
+		}*/
+		
+		.annonce {
+			width:60%;
+			height:100%;
+			
+			float:left;
+			position:relative;
+			overflow-y:auto;
+		}
+		
+		.right-feed {
+			width:35%;
+			height:100%;
+			
+			float:right;
+			position:relative;
+			filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#9d324425', endColorstr='#9d324425'); /* IE */
+			-ms-filter: "progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#9d324425', endColorstr='#9d324425')"; /* IE8 */
+
+			overflow-y:auto;
+		}
+		
+		/*About*/
+		
+		#about-main {
+			margin:0 auto;
+			width:90%;
+			height:35em !important;
+			position:relative;
+		}
+		
+		.about-head {
+			font-family:'Alegreya' serif;
+			font-size:24px;
+			color:#f3eba3;
+			margin-top:1em;
+			margin-bottom:2em;
+		}
+		
+		.abt-minor-head {
+			font-weight:bold;
+			font-size:14px;
+			font-family:'Nunito:400',sans-serif;
+			margin-bottom:0.3em;
+		}
+		
+		.about-paragraph {
+			margin-bottom:2em;
+			width:100%;
+			height:auto;
+			font-size:14px;
+			font-family:'Nunito:400',sans-serif;
+			display:inline-block;
+			text-align:justify;
+		}
+		
+		.about-picture {width:100%;}
+		
+		#left-block {float:left; width:45%;}
+		
+		#right-block {float:right; width:45%;}
+		
+		
+		/*Contacts*/
+		
+		.contact-head {font-size:24px;font-family:'Alegreya' serif;margin-bottom:1em;margin-top:1em;}
+		
+		#contacts {
+			width:96%;
+			height:50%;
+			margin:0 auto;
+			position:relative;
+			display:block;
+			left:50%;
+			margin-left:-47%;
+		}
+		
+		#contacts li {
+			zoom:1;
+			*display:inline;
+			width:24%;
+			margin-left:1em;
+			margin-right:1em;
+			margin-bottom:1em;
+			line-height:1.2em;
+			font-size:14px;
+			word-wrap:normal;
+			width:12em;
+			vertical-align:top;
+		}
+		
+		.vert-div_one {
+			position:absolute;
+			zoom:1;
+			*display:inline;
+			top:4.8em;
+			left:14em;
+		}
+		
+		.vert-div_two {
+			position:absolute;
+			zoom:1;
+			*display:inline;
+			top:4.8em;
+			margin-left:10em;
+		}
+		
+		.vert-div_three {
+			position:absolute;
+			zoom:1;
+			*display:inline;
+			top:5em;
+			margin-left:0.5em;
+		}
+		
+		.hori-div {
+			position:absolute;
+			margin-top:2.8em;
+			width:75%;
+			height:1px;
+			left:0;
+		}
+		
+		.field_small {
+			background:url("http://fynskefaareavlere.dk/wp-content/uploads/2014/03/input.png") no-repeat;
+			height:3em;
+			width:22em;
+			font-size:14px;
+			color:#111;
+			border:none;
+		}
+		
+		.field_big {
+			background:url("http://fynskefaareavlere.dk/wp-content/uploads/2014/03/text_field.png") no-repeat;
+			font-size:14px;
+			color:#111;
+			width:30em;
+			height:12em;
+			border:none;
+			overflow:auto;
+		}
+		
+		.send_button {
+			background:url("http://fynskefaareavlere.dk/wp-content/uploads/2014/03/send.png") no-repeat;
+			width:8em;
+			height:3em;
+			margin-top:0.8em;
+			margin-bottom:6em;
+			border:none;
+		}
+		
+		::-webkit-input-placeholder {
+			color: #444;
+			font-weight:italic;
+			padding-left:0.2em;
+		}
+
+		:-moz-placeholder { /* Firefox 18- */
+			color: #444;
+			font-weight:italic;
+			padding-left:0.2em;  
+		}
+		
+		::-moz-placeholder {  /* Firefox 19+ */
+			color: #444;
+			font-weight:italic;
+			padding-left:0.2em; 
+		}
+		
+		:-ms-input-placeholder {  
+			color: #444;
+			font-weight:italic;
+			padding-left:0.2em;  
+		}
+		
+		.placeholder{color:#444;font-weight:italic;padding-left:0.5em;padding-top:0.5em;}
+		
+		textarea {resize:none;wrap:hard;}
+		
+		/* Links */
+		
+		#content-links {
+			width:100%;
+			height:80%;
+			bottom:0;
+			
+			position:relative;
+			overflow:auto;
+			display:inline-block;
+		}
+		
+		.headline-links {
+			text-shadow:0px 2px 1px rgb(0,0,0);
+			text-align:center;
+			width:100%;
+			font-size:28px;
+			color:#FFF;
+			padding-bottom:0.8em;
+			
+			font-family: 'Nunito:400',sans-serif;
+		}
+		
+		.link_wrapper {
+			width:100%;
+			display:inline-block;
+			position:relative;
+			text-align:center;
+		}
+		
+		.link_container {
+			position:relative;
+			display:block;
+			width:100%;
+			margin:0 auto;
+			
+			padding-bottom:4em;
+		}
+		
+		.linkbox {
+			width:18em;
+			height:auto;
+			filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#9d324425', endColorstr='#9d324425'); /* IE */
+		-ms-filter: "progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#9d324425', endColorstr='#9d324425')"; /* IE8 */
+			display:inline-block;
+			zoom:1;
+			*display:inline;
+			
+			margin:0.2em;
+			
+			text-align:center;
+			font-size:12px;
+		}
+		
+		.link-title {
+			font-size:18px;
+			font-family:'Alegreya' serif;
+			color:#f3eba3;
+			
+			margin-top:0.5em;
+			margin-bottom:0.5em;
+		}
+		
+		/* News, sheep - anything iterable */
+		
+		#content-iter {
+			width:100%;
+			height:80%;
+			bottom:0;
+			
+			position:relative;
+			overflow:auto;
+			display:inline-block;
+			
+			padding-bottom:4rem;
+		}
+		
+		.entry-title-archive {font-size:16px;margin-bottom:0.2em;}
+		
+		.entry-content-archive {color:#FFF; font-family:'Nunito:400',sans-serif; font-size:14px;
+		line-height:1.1em}
+		
+		.entry-readmore-archive {
+			padding-top:0.5em;
+			padding-bottom:1em;
+			padding-left:0.3em;
+
+			text-align:center;
+			display:block;
+			
+			margin-top:5px;
+			margin-bottom:10px;
+			
+			margin-left:auto;
+			margin-right:auto;
+		}
+		
+		.iterbox {
+			width:30%;
+			margin:0.5em;
+			filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#9d324425', endColorstr='#9d324425'); /* IE */
+			-ms-filter: "progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#9d324425', endColorstr='#9d324425')"; /* IE8 */
+			
+			padding-top:5px;
+			padding-bottom:5px;
+			
+			text-align:center;
+			font-size:12px;
+			zoom: 1;
+			*display: inline;
+		}
+		
+		/*Medlemlist*/
+		
+		#content-medlemmer {
+			width:100%;
+			height:80%;
+			bottom:0;
+			filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#9d324425', endColorstr='#9d324425'); /* IE */
+			-ms-filter: "progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#9d324425', endColorstr='#9d324425')"; /* IE8 */
+			
+			position:relative;
+			overflow:auto;
+			display:inline-block;
+		}
+		
+		#member_table_container {
+			height:17em;
+			width:95%;
+			padding-top:3em;
+			margin-left:auto;
+			margin-right:auto;
+			position:relative;
+			
+			padding-bottom:6em;
+		}
+		
+		.member_table {
+			height:auto;
+			width:100%;
+			display:block;
+			overflow:hidden;
+			margin-bottom:1em;
+			
+			filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#99002200', endColorstr='#99002200'); /* IE */
+			-ms-filter: "progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#99002200', endColorstr='#99002200')"; /* IE8 */
+		}
+		
+		.member_table li {
+			display:block;
+			border-bottom:1px solid;
+			border-color:rgb(25,25,25);
+			
+			padding-top:5px;
+			padding-bottom:5px;
+			padding-left:2px;
+			margin-bottom:0.1em;
+			
+			font-family: 'Nunito:400',sans-serif;
+			font-size:16px;
+			color:#FFF;
+			
+			list-style:none;
+		}
+		
+		.medlem-read-btn, .medlem-bliv-btn {
+			display:block;
+			margin-top:-1.5em;
+		}
+		
+		#information {
+			height:auto;
+			width:100%;
+			position:relative;
+			top:0;
+		}
+		
+		#log_in {
+			height:17em;
+			width:100%;
+			padding-top:3em;
+			margin-left:auto;
+			margin-right:auto;
+			position:relative;
+			filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#9dAAAAAA', endColorstr='#9dAAAAAA'); /* IE */
+			-ms-filter: "progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#9dAAAAAA', endColorstr='#9dAAAAAA')"; /* IE8 */
+			margin-bottom:8em;
+			clear:both;
+		}
+		
+		#loginform {
+			width:300px;
+			height:350px;
+			height:auto;
+			position:relative;
+			margin-left:auto;
+			margin-right:auto;
+			top:1em;
+		}
+
+		.login-username {
+			background:url("http://fynskefaareavlere.dk/wp-content/uploads/2014/03/input1.png") no-repeat;
+			height:3.5em;
+			width:22em;
+			border:rgb(0,0,0);
+			font-size:14px;
+			color:#111;
+			margin-bottom:0.5em;
+		}
+
+		.login-username label, .login-password label {
+			display:none;
+		}
+
+		.login-username input, .login-password input {
+			margin-left:15px;
+			top:1px;
+			position:relative;
+			background-color:none !important;
+			border:none;
+			width:85%;
+			height:1.9em;
+		}
+
+		.login-password {
+			background:url("http://fynskefaareavlere.dk/wp-content/uploads/2014/03/input1.png") no-repeat;
+			height:3.5em;
+			width:22em;
+			border:rgb(0,0,0);
+			font-size:14px;
+			color:#111;
+			margin-bottom:12px;
+		}
+
+		.login-remember {
+			float:right;
+		}
+
+		.login-submit {
+			float:left;
+		}
+
+		.medlem_text_big {
+			text-align:center;
+			position:relative;
+			margin-top:1em;
+			margin-bottom:14px;
+			font-size:24px;
+			font-family:'Alegreya', serif;
+		}
+
+		.medlem_text_small {
+			text-align:center;
+			font-size:14px;
+		}
+
+		#par_one, #par_three {
+			width:40%;
+			height:auto;
+			position:relative;
+		}
+
+		#par_one {
+			float:left;
+			left:2em;
+			margin-top:1em;
+			margin-bottom:1em;
+			
+			font-size:16px;
+			color:#FFF;
+			font-family:'Nunito:300', sans-serif;
+		}
+
+		#par_two {
+			width:100%;
+		}
+
+		#par_three {
+			float:right;
+			right:2em;
+			margin-top:-1.8em;
+		}
+		
+		#par_three img {
+			margin-top:2em;
+		}
+
+		.medlems_headtext {
+			font-size:28px;
+			position:relative;
+			margin-left:1em;
+			margin-top:1em;
+		}
+
+		.medlem_tilmeld {
+			margin-top:2em;
+			zoom:1;
+			*display:inline;
+		}
+		
+		#par_three img {display:block !important; margin-top:2em;}
+		
+		/* Gallery */
+		#content-gallery{
+			width:100%;
+			height:80%;
+			bottom:0;
+				
+			position:relative;
+			overflow:auto;
+			display:inline-block;
+			overflow-x:hidden;
+				
+			padding-bottom:4em;
+		}	
+		
+	
+		#gallery-container {
+			width:95%;
+			height:auto;
+			position:relative;
+			display:block;
+
+			padding-top:1em;
+			padding-bottom:4em;
+		}
+		
+		.gallery-preview-img {
+			display:inline-block;
+		}
+		
+		.gallery-preview-img img {
+			width:60%;
+			height:50%;
+			border-radius:none;
+			border:none;
+		}
+		
+		/* Fårets Dag */
+		
+		.faretsdag-notlogged {
+			text-align:center;
+			width:100%;
+			height:25em;
+			
+			background:rgba(240,240,240,0.5);
+			margin-top:23em;
+		}
+		
+		.faretsdag-notlogged-headline {
+			text-align:center;
+			padding-top:3em;
+			margin-bottom:1em;
+			
+			font-family:'Alegreya', serif;
+			font-size:24px;
+			color:#FFF;
+		}
+		
+		.faretsdag-notlogged-text {
+			text-align:center;
+			margin-bottom:1em;
+			
+			font-family:'Alegreya', serif;
+			font-size:18px;
+			color:#EEE;
+		}
+		
+		.faretsdag-notlogged-form {
+			width:300px;
+			height:350px;
+			height:auto;
+			position:relative;
+			margin-left:auto;
+			margin-right:auto;
+			margin-top:1em;
+		}
+		
+		.faretsdag-notlogged-form .login-password {
+			margin-left:0;
+		}
+		
+		.faretsdag {
+			height:auto;
+			width:100%;
+			display:block;
+			margin:0 auto;
+		}
+		
+		/* Fåretsdag page post styling */
+		
+		.faretsdag div { 
+			font-family:'Nunito:300', sans-serif;
+			padding-left:1em;
+			padding-right:1em;
+			padding-bottom:0.5em;
+			font-size:14px;
+			width:100%;
+			word-wrap:break-word;
+		}
+		
+		.faretsdag h1, .faretsdag h2, .faretsdag h3,
+		.faretsdag h4, .faretsdag h5, .faretsdag h6{
+			font-weight:bold;
+			font-family:'Nunito:400', sans-serif;
+		}
+		
+		.faretsdag h1 {font-size:24px; font-family:'Alegreya', serif;}
+		.faretsdag h2 {font-size:18px;}
+		.faretsdag h3 {font-size:16px;}
+		.faretsdag h4 {font-size:14px;}
+		.faretsdag h5 {font-size:12px;}
+		.faretsdag h6 {font-size:10px;}
+		
+		.faretsdag-title {margin-left:1em;margin-top:1em;}
+		
+	/* Headline (left <section>) */
+	
+		#headline {
+			width:45%;
+			display:inline-block;
+			position:relative;
+			margin-right:1.8em;
+			margin-left:1em;
+			top:0px;
+			float:left;
+			
+			filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#9d324425', endColorstr='#9d324425'); /* IE */
+			-ms-filter: "progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#9d324425', endColorstr='#9d324425')"; /* IE8 */
+			
+			padding:25px;
+		}
+		
+		.main_blurb {
+			font-size:40px;
+			margin-bottom:40px;
+		}
+		
+		.second_blurb {
+			font-size:16px;
+			text-align:justify;
+		}
+		
+		#headline-readmore {
+			margin-top:24px;
+			display:block;
+		}
+}
+
+/*SMALL SCREEN*/
+
+@media (max-width:1279px){
+
+	a {
+		color:#f3eba3;
+		text-decoration:none;
+	}
+	
+	h1 {
+		color:#f3eba3;
+		font-family: 'Alegreya', serif;
+	}
+	
+	p,article,h2 {
+		color:#FFF;
+		font-family: 'Nunito:400', sans-serif;
+	}
+	
+	a {
+		font-family: 'Nunito:300', sans-serif;
+	}
+	
+	article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+		display: block;
+	}
+	
+	li {
+		display:inline;
+	}
+	
+	li a {
+		color:#FFF;
+	}
+	
+	html,body{
+		height:100%\9;
+		overflow:hidden;
+	}
+	
+	html {
+		background:url("http://fynskefaareavlere.dk/wp-content/uploads/2014/03/main_bg_tablet.jpg") no-repeat center center fixed !important;
+		-webkit-background-size: cover;
+		-moz-background-size: cover;
+		-o-background-size: cover;
+		background-size: cover;
+		
+		filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='.http://fynskefaareavlere.dk/wp-content/uploads/2014/03/main_bg_tablet.jpg', sizingMethod='scale');
+		-ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://fynskefaareavlere.dk/wp-content/uploads/2014/03/main_bg_tablet.jpg', sizingMethod='scale')";
+	}
+	
+	hr {
+		width:80%;
+	}
+	
+	#wrapper {
+		
+		margin-top:20%;
+		width:100%;
+		height:100%;
+		margin:0 auto;
+	}
+	
+	#container {
+		padding-top:60px;
+		padding-bottom:100px;
+		height:100%;
+	}
+	
+	/*Header and footer*/
+	
+	#header {
+		width:100%;
+		filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#9d003300', endColorstr='#9d003300'); /* IE */
+		-ms-filter: "progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#9d003300', endColorstr='#9d003300')"; /* IE8 */
+		height:8em;
+		
+		clear:both;
+	}
+	
+	#header_wrap {
+		max-width:960px;
+		width:100%;
+		height:100%;
+		left:50%;
+		margin-left:-480px;
+	}
+	
+	#branding {
+		width:90%;
+		left:2em;
+		padding-top:1em;
+		font-size:28px;
+		position:relative;
+	}
+	
+	#header nav {
+		width:100%;
+		font-size:12px;
+		height:2em;
+		padding:0.9em;
+	}
+	
+	#menu {
+		list-style-type:none;
+		width:100%;
+		font-size:12px;
+		height:2em;
+		margin:0 auto;
+		float:left;
+		
+		text-align:center;
+		margin-top:24px;
+	}
+	
+	#menu a{padding-bottom:24px;margin-bottom:-24px;}
+	
+	#menu a:hover{
+		color:#f3eba3;
+		margin-bottom:-24px;
+		padding-bottom:24px;
+		background-image:url("http://fynskefaareavlere.dk/wp-content/uploads/2014/03/marker.png") 3px;
+		background-repeat:no-repeat;
+		background-position:center;
+	}
+	
+	.current-menu-item a{
+		color:#f3eba3;
+		margin-bottom:-24px;
+		padding-bottom:24px;
+		background-image:url("http://fynskefaareavlere.dk/wp-content/uploads/2014/03/marker.png") 3px;
+		background-repeat:no-repeat;
+		background-position:center;
+		font-weight:bold;
+		}
+	
+	#sec_menu {
+		width:50% !important;
+		font-size:12px;
+		display:inline-block;
+		right:-5em;
+		float:right;
+		margin-top:-2.9em;
+		padding-bottom:2em;
+		position:relative;
+	}
+	
+	.sec_menu_item {display:inline-block;margin-bottom:16px;margin-left:8px;}
+
+
+	#folgos-ie{
+		margin-right:20px;
+		margin-left:20px;
+	}
+	
+	
+	#tilmeld-ie {
+		margin-right:20px;
+	}
+	
+	#footer {
+		position:fixed;
+		bottom:10px;
+		margin-left:1em;
+		color:#FFF;
+		font-size:14px;
+		text-shadow:0px 2px 1px rgba(0,0,0,0.8);
+	}
+	
+	#copyright {
+		display:none;
+	}
+	
+	.medlem_header_img, .about-picture {display:none;}
+	
+	#content, #content-arrangementer, #content-annoncer,
+	#content-about, #content-contact, #content-map {
+		width:100%;
+		height:80%;
+		bottom:0;
+		filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#9d003300', endColorstr='#9d003300'); /* IE */
+		-ms-filter: "progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#9d003300', endColorstr='#9d003300')"; /* IE8 */
+
+			
+		position:relative;
+		overflow:auto;
+		display:inline-block;
+			
+		padding-bottom:4em;
+	}
+	
+	#arrang-headline, #annonc-headline, #headline-about,
+	#headline-contact, #headline-medlemmer, #headline-gallery,
+	#headline-iter, #headline-map {
+		text-shadow:0px 2px 1px rgba(0,0,0,0.8);
+		text-align:center;
+		width:100%;
+		font-size:24px;
+		color:#FFF;
+		margin-top:-1.5em;
+		margin-bottom:1.5em;
+			
+		font-family: 'Nunito:400', sans-serif;
+	}
+	/*End of general styling*/
+	/*--------------------------------------------------------------------*/
+	/*Index styling*/
+	
+	/*Content (right <section>)*/
+		
+		#content article {
+			padding-left:0.9em;
+			padding-right:0.9em;
+			padding-top:0.9em;
+		}
+		
+		#content-post {
+			width:100%;
+			height:80%;
+			margin:0 auto;
+			bottom:0;
+			filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#9d003300', endColorstr='#9d003300'); /* IE */
+			-ms-filter: "progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#9d003300', endColorstr='#9d003300')"; /* IE8 */
+			
+			position:relative;
+			overflow:auto;
+			display:inline-block;
+			
+			padding-bottom:4em;
+		}
+		
+		.attachment-post-thumbnail {
+			height:75px;
+			width:75px;
+			
+			-o-border-radius:50%;
+			border:1px solid rgb(150,150,150);
+			border-radius:50%;
+			
+			margin-bottom:10px;
+			margin-left:auto;
+			margin-right:auto;
+			
+			display:block;
+		}
+		
+		#content a {
+			font-family: 'Alegreya', serif;
+		}
+		
+		.entry-title {
+			text-align:center;
+		}
+		
+		.entry-content {
+			text-align:center;
+			padding:0.5em;
+			font-size:12px;
+			width:60%;
+			margin:0 auto;
+		}
+		
+		.entry-thumb img {
+			height:75px;
+			width:75px;
+			
+			-o-border-radius:50%;
+			border:1px solid rgb(150,150,150);
+			border-radius:50%;
+			
+			margin-top:0.8em;
+			margin-bottom:10px;
+			margin-left:auto;
+			margin-right:auto;
+			
+			display:block;
+		}
+		
+		.entry-readmore {
+			padding-top:0.5em;
+			padding-bottom:0.8em;
+			padding-left:0.3em;
+
+			text-align:center;
+			display:block;
+			
+			margin-top:0.8em;
+			margin-bottom:0.2em;
+			
+			margin-left:auto;
+			margin-right:auto;
+		}
+		
+		.news-divider {
+			width:30%;
+			margin-left:35%;
+		}
+		
+		.left_bar {
+			position:absolute;
+			left:35%;
+			margin-top:2.5em;
+		}
+		
+		.right_bar {
+			position:absolute;
+			right:35%;
+			margin-top:-3em;
+		}
+		
+		#empty-buffer {
+			height:100px;
+			width:100%;
+		}
+		
+		#nav-below {
+			padding-bottom:200px;
+			text-align:center;
+		}
+		
+		#empty-buffer {
+			height:100px;
+			width:100%;
+		}
+		
+		#headline {
+			display:none;
+		}
+		
+		/*Arrangementer*/		
+		#arrang-header{
+			display:none;
+		}
+		
+		#arrang-entry{
+			width:40%;
+			height:270px;
+			font-size:16px;
+			font-family:'Nunito:400' sans-serif;
+			
+			display:block;
+			position:relative;
+			left:1em;
+		}
+		
+		#arrang-aside {
+			width:40%;
+			height:auto;
+			font-size:16px;
+			color:#FFF;
+			font-family:'Nunito:400' sans-serif;
+			
+			display:block;
+			position:relative;
+			left:1em;
+			float:left;
+			
+			padding-bottom:5em;
+		}
+		
+		#begynderkursus,#kurs-priser,#emner,#kursussted {
+			font-size:16px;
+			color:#f3eba3;
+			margin-bottom:1.5em;
+		}
+		
+		#emner{
+			margin-top:0.1em;
+		}
+		
+		#kursussted {
+			margin-top:0.9em;
+		}
+		
+		#arrang-aside ul li {
+			display:block;
+			background-image:url("http://fynskefaareavlere.dk/wp-content/uploads/2014/03/check-icon.png") !important;
+			background-repeat:no-repeat;
+			background-position:0px 2px;
+			padding-left:1em;
+			padding-bottom:5px;
+		}
+		
+		#event-feed {
+			margin-top:-20em;
+			right:1em;
+			float:right;
+			display:block;
+			position:relative;
+			overflow:auto;
+			width:45%;
+		}
+
+		.entry-content-events {
+			text-align:justify;
+			font-size:14px;
+			
+		}
+		
+		.vert-divider {
+			display:none;
+		}
+		
+		/*Annoncer*/
+		
+		#content-annoncer ul li {
+			padding:0.9em;
+			margin-top:1em;
+			zoom:1;
+			*display:inline;
+			text-align:center;
+		}
+		
+		#annonc_main {
+			margin-top:0.5em;
+			padding:0.9em;
+			width:43%;
+			text-align:justify;
+			font-size:14px;
+			line-height:1.1em;
+			font-weight:bold;
+			margin-left:5.6%;
+			margin-top:1em;
+		}
+		
+		.link_annonc {
+			margin-top:0.5em;
+			margin-bottom:0.5em;
+			text-align:center;
+			font-size:18px;
+			
+			zoom: 1;
+			*display: inline;
+		}
+		
+		.annonc-buttons {
+			width:100%;
+			margin:0 auto;
+			position:relative;
+			zoom:1;
+			*display:inline;
+			
+			padding-bottom:3em;
+			text-align:center;
+		}
+		
+		.annonc-link-text {
+			width:12em;
+			text-align:center;
+			font-size:14px;
+		}
+		
+		.annonc-link-img {
+			width:15%;
+			margin:0 auto;
+			position:relative;
+			zoom:1;
+			*display:inline;
+		}
+		
+		.annoncer-links {
+			border-top:1px solid #FFF;
+			right:1em;
+			top:1.6em;
+			float:right;
+			zoom:1;
+			*display:inline;
+			width:45%;
+			overflow-x:hidden;
+			padding-top:1em;
+			padding-bottom:4em;
+			position:relative;
+			text-align:center;
+		}
+
+		.annoncer-linkbox {
+			width:auto;
+			height:auto;
+			display:block;
+			margin:0 auto;
+			position:relative;
+			
+			padding-top:5px;
+			padding-bottom:5px;
+			margin-bottom:1em;
+			
+			text-align:center;
+			font-size:12px;
+		}
+
+		.entry-link-summary {
+			margin-top:1em;
+			margin-bottom:1em;
+
+			font-size: 16px !important;
+			width:100%;
+			text-align:center;
+		}
+		
+		.entry-link-summary a {color:#FFF !important;text-decoration:underline;}
+
+		.entry-link-summary:hover {
+			cursor:pointer;
+			
+		}
+		
+		/*.annoncer-links {
+			display:none;
+		}*/
+		
+		.annonce {
+			width:60%;
+			height:100%;
+			
+			float:left;
+			position:relative;
+			overflow-y:auto;
+		}
+		
+		.right-feed {
+			width:35%;
+			height:100%;
+			
+			float:right;
+			position:relative;
+			filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#9d324425', endColorstr='#9d324425'); /* IE */
+			-ms-filter: "progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#9d324425', endColorstr='#9d324425')"; /* IE8 */
+
+			overflow-y:auto;
+		}
+		
+		/*About*/
+		
+		#about-main {
+			margin:0 auto;
+			width:90%;
+			height:35em !important;
+			position:relative;
+		}
+		
+		.about-head {
+			font-family:'Alegreya' serif;
+			font-size:18px;
+			color:#f3eba3;
+			margin-top:1em;
+			margin-bottom:2em;
+		}
+		
+		.abt-minor-head {
+			font-weight:bold;
+			font-size:12px;
+			font-family:'Nunito:400',sans-serif;
+			display:block;
+		}
+		
+		.about-paragraph {
+			margin-bottom:2em;
+			width:100%;
+			height:auto;
+			font-size:12px;
+			font-family:'Nunito:400',sans-serif;
+			display:inline-block;
+			text-align:justify;
+		}
+		
+		.about-picture {width:100%;}
+		
+		#left-block {float:left; width:45%;}
+		
+		#right-block {float:right; width:45%;}
+		
+		/*Contacts*/
+		
+		.contact-head {font-size:24px;font-family:'Alegreya' serif;margin-bottom:1em;margin-top:1em;}
+		
+		#contacts {
+			width:96%;
+			height:50%;
+			margin:0 auto;
+			position:relative;
+			display:block;
+			left:50%;
+			margin-left:-47%;
+		}
+		
+		#contacts li {
+			zoom:1;
+			*display:inline;
+			width:24%;
+			margin-bottom:0.8em;
+			line-height:1.2em;
+			font-size:14px;
+		}
+		
+		#contacts a:hover{text-decoration:underline;}
+		
+		.vert-div_one {
+			position:absolute;
+			zoom:1;
+			*display:inline;
+			top:4.5em;
+			left:16em;
+		}
+		
+		.vert-div_two {
+			position:absolute;
+			zoom:1;
+			*display:inline;
+			top:4.5em;
+			margin-left:14em;
+		}
+		
+		.vert-div_three {
+			position:absolute;
+			zoom:1;
+			*display:inline;
+			top:4.5em;
+			margin-left:4em;
+		}
+		
+		.hori-div {
+			position:absolute;
+			margin-top:1.6em;
+			width:75%;
+			height:1px;
+			left:2em;
+		}
+		
+		.field_small {
+			background:url("http://fynskefaareavlere.dk/wp-content/uploads/2014/03/input.png") no-repeat;
+			height:3em;
+			width:22em;
+			font-size:14px;
+			color:#111;
+			border:none;
+		}
+		
+		.field_big {
+			background:url("http://fynskefaareavlere.dk/wp-content/uploads/2014/03/text_field.png") no-repeat;
+			font-size:14px;
+			color:#111;
+			width:30em;
+			height:12em;
+			border:none;
+			overflow:auto;
+		}
+		
+		.send_button {
+			background:url("http://fynskefaareavlere.dk/wp-content/uploads/2014/03/send.png") no-repeat;
+			width:8em;
+			height:3em;
+			margin-top:0.8em;
+			margin-bottom:6em;
+			border:none;
+		}
+		
+		::-webkit-input-placeholder {
+			color: #444;
+			font-weight:italic;
+			padding-left:0.2em;
+		}
+
+		:-moz-placeholder { /* Firefox 18- */
+			color: #444;
+			font-weight:italic;
+			padding-left:0.2em;  
+		}
+		
+		::-moz-placeholder {  /* Firefox 19+ */
+			color: #444;
+			font-weight:italic;
+			padding-left:0.2em; 
+		}
+		
+		:-ms-input-placeholder {  
+			color: #444;
+			font-weight:italic;
+			padding-left:0.2em;  
+		}
+		
+		.placeholder{color:#444;font-weight:italic;padding-left:0.5em;padding-top:0.5em;}
+		
+		textarea {resize:none;wrap:hard;}
+		
+		/* Links */
+		
+		#content-links {
+			width:100%;
+			height:80%;
+			bottom:0;
+			
+			position:relative;
+			overflow:auto;
+			display:inline-block;
+		}
+		
+		.headline-links {
+			text-shadow:0px 2px 1px rgb(0,0,0);
+			text-align:center;
+			width:100%;
+			font-size:18px;
+			color:#FFF;
+			padding-top:0.8em;
+			padding-bottom:0.8em;
+			
+			font-family: 'Nunito:400',sans-serif;
+		}
+		
+		.link_wrapper {
+			width:100%;
+			display:inline-block;
+			position:relative;
+			
+			padding-bottom:4em;
+		}
+		
+		.link_container {
+			position:relative;
+			display:block;
+			width:100%;
+		}
+		
+		.linkbox {
+			width:18em;
+			height:auto;
+			filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#9d003300', endColorstr='#9d003300'); /* IE */
+			-ms-filter: "progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#9d003300', endColorstr='#9d003300')"; /* IE8 */
+			display:inline-block;
+			
+			margin-right:0.5em;
+			margin-bottom:0.5em;
+			padding-top:5px;
+			
+			zoom:1;
+			*display:inline;
+			
+			text-align:center;
+			font-size:12px;
+		}
+		
+		.link-title {
+			font-size:16px;
+			font-family:'Alegreya' serif;
+			color:#f3eba3;
+			
+			margin-top:0.5em;
+			margin-bottom:0.5em;
+		}
+		
+		/*Medlemlist*/
+		
+		#content-medlemmer {
+			width:100%;
+			height:80%;
+			bottom:0;
+			filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#9d003300', endColorstr='#9d003300'); /* IE */
+			-ms-filter: "progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#9d003300', endColorstr='#9d003300')"; /* IE8 */
+			
+			position:relative;
+			overflow:auto;
+			display:inline-block;
+		}
+		
+		#member_table_container {
+			height:17em;
+			width:95%;
+			padding-top:3em;
+			top:23em;
+			margin-left:auto;
+			margin-right:auto;
+			position:relative;
+			
+			padding-bottom:6em;
+		}
+		
+		.member_table {
+			height:auto;
+			width:100%;
+			display:block;
+			overflow:hidden;
+			margin-bottom:1em;
+		}
+		
+		.member_table li {
+			display:block;
+			filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#AA002200', endColorstr='#AA002200'); /* IE */
+			-ms-filter: "progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#AA002200', endColorstr='#AA002200')"; /* IE8 */
+
+			border-bottom:1px solid;
+			border-color:rgb(25,25,25);
+			
+			padding-top:5px;
+			padding-bottom:5px;
+			padding-left:2px;
+			margin-bottom:0.1em;
+			
+			font-family: 'Nunito:400',sans-serif;
+			font-size:16px;
+			color:#FFF;
+			
+			list-style:none;
+		}
+		
+		#information {
+			height:auto;
+			width:100%;
+			position:relative;
+			top:0;
+		}
+		
+		#log_in {
+			height:17em;
+			width:100%;
+			padding-top:3em;
+			margin-left:auto;
+			margin-right:auto;
+			position:relative;
+			filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#9dAAAAAA', endColorstr='#9dAAAAAA'); /* IE */
+			-ms-filter: "progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#9dAAAAAA', endColorstr='#9dAAAAAA')"; /* IE8 */
+			margin-bottom:8em;
+			clear:both;
+		}
+		
+		#loginform {
+			width:300px;
+			height:350px;
+			height:auto;
+			position:relative;
+			margin-left:auto;
+			margin-right:auto;
+			top:1em;
+		}
+
+		.login-username {
+			background:url("http://fynskefaareavlere.dk/wp-content/uploads/2014/03/input.png") no-repeat;
+			height:3.5em;
+			width:22em;
+			border:rgba(0,0,0,0.0);
+			font-size:14px;
+			color:#111;
+			margin-bottom:0.5em;
+		}
+
+		.login-username label, .login-password label {
+			display:none;
+		}
+
+		.login-username input, .login-password input {
+			margin-left:15px;
+			top:1px;
+			position:relative;
+			background-color:rgba(0,0,0,0.0) !important;
+			border:none;
+			width:85%;
+			height:1.9em;
+		}
+
+		.login-password {
+			background:url("http://fynskefaareavlere.dk/wp-content/uploads/2014/03/input.png") no-repeat;
+			height:3.5em;
+			width:22em;
+			border:rgba(0,0,0,0.0);
+			font-size:14px;
+			color:#111;
+			margin-bottom:12px;
+		}
+
+		.login-remember {
+			float:right;
+		}
+
+		.login-submit {
+			float:left;
+		}
+
+		.medlem_text_big {
+			text-align:center;
+			position:relative;
+			margin-top:1em;
+			margin-bottom:14px;
+			font-size:24px;
+			font-family:'Alegreya', serif;
+		}
+
+		.medlem_text_small {
+			text-align:center;
+			font-size:14px;
+		}
+		
+		.medlem-read-btn, .medlem-bliv-btn {
+			display:block;
+			margin-top:1em;
+		}
+
+		#par_one, #par_three {
+			width:40%;
+			height:auto;
+		}
+
+		#par_one {
+			left:2em;
+			margin-top:1em;
+			position:relative;
+			float:left;
+			
+			font-size:16px;
+			color:#FFF;
+			font-family:'Nunito:300', sans-serif;
+			margin-bottom:1em;
+		}
+
+		#par_two {
+			width:100%;
+		}
+
+		#par_three {
+			position:relative;
+			float:right;
+			right:2rem;
+			margin-top:-1.8em;
+		}
+
+		.medlems_headtext {
+			font-size:28px;
+			margin-left:1.1em;
+			margin-top:2em;
+		}
+
+		.medlem_tilmeld {
+			display:block;
+		}
+		
+		#par_three img {display:block !important; margin-top:2em;}
+		
+		/* News, sheep - anything iterable */
+		
+		#content-iter {
+			width:100%;
+			height:80%;
+			bottom:0;
+			
+			position:relative;
+			overflow:auto;
+			display:inline-block;
+			
+			padding-bottom:4rem;
+		}
+		
+		.entry-title-archive {font-size:16px;margin-bottom:0.2em;}
+		
+		.entry-content-archive {color:#FFF; font-family:'Nunito:400',sans-serif; font-size:14px;
+		line-height:1.1em}
+		
+		.entry-readmore-archive {
+			padding-top:0.5em;
+			padding-bottom:1em;
+			padding-left:0.3em;
+
+			text-align:center;
+			display:block;
+			
+			margin-top:5px;
+			margin-bottom:10px;
+			
+			margin-left:auto;
+			margin-right:auto;
+		}
+		
+		.iterbox {
+			width:30%;
+			margin:1%;
+			filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#9d003300', endColorstr='#9d003300'); /* IE */
+			-ms-filter: "progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#9d003300', endColorstr='#9d003300')"; /* IE8 */
+			
+			padding-top:5px;
+			padding-bottom:5px;
+			
+			text-align:center;
+			font-size:12px;
+			zoom: 1;
+			*display: inline;
+		}
+		
+		/* Gallery */
+		#content-gallery{
+			width:100%;
+			height:80%;
+			bottom:0;
+				
+			position:relative;
+			overflow:auto;
+			display:inline-block;
+			overflow-x:hidden;
+				
+			padding-bottom:4em;
+		}	
+		
+	
+		#gallery-container {
+			width:95%;
+			height:auto;
+			position:relative;
+			display:block;
+
+			padding-top:1em;
+			padding-bottom:4em;
+		}
+		
+		.gallery-preview-img {
+			display:inline-block;
+		}
+		
+		.gallery-preview-img img {
+			width:60%;
+			height:50%;
+			border-radius:none;
+			border:none;
+		}
+		
+		/* Fårets Dag */
+		
+		.faretsdag-notlogged {
+			text-align:center;
+			width:100%;
+			height:23em;
+			
+			background:rgba(240,240,240,0.5);
+			margin-top:18em;
+		}
+		
+		.faretsdag-notlogged-headline {
+			text-align:center;
+			padding-top:2em;
+			margin-bottom:1em;
+			
+			font-family:'Alegreya', serif;
+			font-size:24px;
+			color:#FFF;
+		}
+		
+		.faretsdag-notlogged-text {
+			text-align:center;
+			margin-bottom:1em;
+			
+			font-family:'Alegreya', serif;
+			font-size:18px;
+			color:#EEE;
+		}
+		
+		.faretsdag-notlogged-form {
+			width:300px;
+			height:350px;
+			height:auto;
+			position:relative;
+			margin-left:auto;
+			margin-right:auto;
+			margin-top:1em;
+		}
+		
+		.faretsdag-notlogged-form .login-password {
+			margin-left:0;
+		}
+		
+		.faretsdag {
+			height:auto;
+			width:100%;
+			display:block;
+			margin:0 auto;
+		}
+		
+		/* Fåretsdag page post styling */
+		
+		.faretsdag div { 
+			font-family:'Nunito:300', sans-serif;
+			padding-left:1em;
+			padding-right:1em;
+			padding-bottom:0.5em;
+			font-size:14px;
+			width:100%;
+			word-wrap:break-word;
+		}
+		
+		.faretsdag h1, .faretsdag h2, .faretsdag h3,
+		.faretsdag h4, .faretsdag h5, .faretsdag h6{
+			font-weight:bold;
+			font-family:'Nunito:400', sans-serif;
+		}
+		
+		.faretsdag h1 {font-size:18px; font-family:'Alegreya', serif;}
+		.faretsdag h2 {font-size:16px;}
+		.faretsdag h3 {font-size:14px;}
+		.faretsdag h4 {font-size:12px;}
+		.faretsdag h5 {font-size:10px;}
+		.faretsdag h6 {font-size:8px;}
+		
+		.faretsdag-title {margin-left:1em;margin-top:1em;}
+}

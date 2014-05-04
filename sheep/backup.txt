@@ -1,0 +1,7 @@
+﻿<h1 class="sticky-thumb"><img src="<?php bloginfo('stylesheet_directory'); ?>/images/sheep_icon.png"></h1>
+<h1 class="entry-title-summary">FÅRETS DAG DEN 19. APRIL</h1>
+<p class="entry-content-summary">
+Kom og besøg 14 fåreavlere, som åbner stalddørene for besætningsbesøg<br/>
+Kl. 10 - 16 påskelørdag.</p>
+<a class="entry-readmore" href="http://fynskefaareavlere.dk/farets-dag/"><img src="<?php bloginfo('stylesheet_directory'); ?>/images/laes_mere.png"></a>
+<img class="news-divider" src="<?php bloginfo('stylesheet_directory'); ?>/images/news_divider.png">
