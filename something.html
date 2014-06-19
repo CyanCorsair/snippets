@@ -39,6 +39,8 @@ canvas {
 			gl.clear(gl.COLOR_BUFFER_BIT|gl.DEPTH_BUFFER_BIT);
 			gl.viewport(0,0,canvas.width, canvas.height);
 		}
+
+		drawScene();
 	}
 
 	function initWebGL(canvas) {
@@ -96,6 +98,73 @@ canvas {
 
 			currentChild = currentChild.nextSibling;
 		}
+
+		if(shaderScript.type == "x-shader/x-fragment") {
+			shader = gl.createShader(gl.FRAGMENT_SHADER);
+		} else if (shaderScript.type == "x-shader/x-vertex") {
+			shader = gl.createShader(gl.VERTEX_SHADER);
+		} else {
+			//unknown shader type
+			return null;
+		}
+
+		gl.shaderSource(shader, theSource);
+
+		gl.compileShader(shader);
+
+		if (!gl.getShaderParameter(shader, gl.COMPILE_SATUS)) {
+			alert("A shader compiler error occurred: " + gl.getShaderInfoLog(shader));
+			return null;
+		}
+
+		return shader;
+	}
+
+	var horizAspect = window.height / window.width;
+
+	function initBuffers() {
+		squareVerticesBuffer = gl.createBuffer();
+		gl.bindBuffer(gl.ARRAY_BUFFER, squareVerticesBuffer);
+
+		var vertices = [
+		1.0, 1.0, 0.0,
+		-1.0, 1.0, 0.0,
+		1.0, -1.0, 0.0,
+		-1.0, -1.0, 0.0
+		];
+
+		gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(vertices), gl.STATIC_DRAW);
+	}
+
+	function drawScene() {
+		gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT);
+
+		perspectiveMatrix = gl.makePerspective(45, window.height/window.width, 0.1, 100.0);
+
+		loadIdentity();
+		mvTranslate([-0.0, 0.0, -6.0]);
+
+		gl.bindBuffer(gl.ARRAY_BUFFER, squareVerticesBuffer);
+		gl.vertexAttribPointer(vertexPositionAttribute, 3, gl.FLOAT, false, 0, 0);
+		setMatrixUniforms();
+		gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
+	}
+</script>
+
+<script id="shader-fs" type="x-shader/x-fragment">
+	void main(void) {
+		gl_FragColor = vec4(1.0,1.0,1.0,1.0);
+	}
+</script>
+
+<script id="shader-vs" type="x-shader/x-vertex">
+	attribute vec3 aVertexPosition;
+
+	uniform mat4 uMVMatrix;
+	uniform mat4 uPMatrix;
+
+	void main(void) {
+		gl_Position = uPMatrix * uMVMatrix * vec4(aVertexPosition, 1.0);
 	}
 </script>
 
