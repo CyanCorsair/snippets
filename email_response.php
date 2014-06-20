@@ -1,6 +1,6 @@
 <?php
 if (isset($_POST['resp_email'])) {
-	$from = "Bordbestilling <bordbestilling@froggyscafe.dk>";
+	$from = "Froggy's Café <bordbestilling@froggyscafe.dk>";
 	$email = $_POST['resp_email'];
 	$subject = "Tak for din reservation på Froggy's Café";
 	$message = "Vi har modtaget din reservation, og vi har bord klar til dig, som du har ønsket.\n
